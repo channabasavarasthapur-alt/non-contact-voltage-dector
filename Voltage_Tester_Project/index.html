@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Non-Contact Voltage Tester – INSPIRE MANAK 2024–25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;600;700;800&family=Noto+Sans+Telugu:wght@400;700&family=Noto+Sans+Devanagari:wght@400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Stars -->
+<div id="stars"></div>
+
+<!-- Progress bar -->
+<div id="progressBar" style="width:20%"></div>
+
+<!-- ═══════════════════════════════════════════════
+     FIXED HEADER — logos on every slide
+════════════════════════════════════════════════ -->
+<header id="header">
+
+  <!-- ── LEFT: Akshara Sri Logo (actual uploaded image) ── -->
+  <div class="logo-left">
+    <img
+      src="assets/school-logo.jpg" alt="Akshara Sri EM Model High School" id="logo-school"
+    />
+  </div>
+
+  <!-- ── RIGHT: INSPIRE MANAK Logo (actual uploaded image) ── -->
+  <div class="logo-right">
+    <img
+      src="assets/inspire-logo.jpg" alt="INSPIRE MANAK Awards" id="logo-inspire"
+    />
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 1 — TITLE SCREEN
+════════════════════════════════════════════════ -->
+<div class="scene active" id="scene1">
+  <span class="bolt-icon">⚡</span>
+  <div class="badge">INSPIRE MANAK Awards 2024 – 2025</div>
+  <div class="main-title">Non-Contact<br>Voltage Tester</div>
+  <div class="divider"></div>
+  <div class="sub-title">
+    Detect live wires —
+    <strong style="color:var(--gold);font-weight:700;">without touching them</strong>
+  </div>
+  <div class="chips-row" style="margin-top:14px;">
+    <span class="chip">👤 Student Innovation</span>
+    <span class="chip">⚡ 50 – 1000 V AC Detection</span>
+    <span class="chip">🔒 Zero Contact Safety</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 2 — HOW IT WORKS
+════════════════════════════════════════════════ -->
+<div class="scene" id="scene2">
+  <div class="slide-heading">⚡ How It Works</div>
+
+  <!-- Wire animation -->
+  <div class="detect-wrap">
+    <div class="wire-line"></div>
+    <div class="c-dot"></div>
+    <div class="c-dot"></div>
+    <div class="c-dot"></div>
+    <div class="tester-wrap">
+      <div class="tester-body">
+        <div class="tester-led"></div>
+        <div style="font-size:5.5px;color:var(--green);font-family:monospace;margin-top:2px;">AC</div>
+      </div>
+      <div class="tester-tip"></div>
+    </div>
+    <div class="detect-label">✔ VOLTAGE DETECTED!</div>
+  </div>
+
+  <ul class="key-points">
+    <li>
+      <span class="kp-icon">🔌</span>
+      AC live wire generates an <strong style="color:var(--gold)">oscillating electric field</strong> around it
+    </li>
+    <li>
+      <span class="kp-icon">📡</span>
+      Antenna senses the field via <strong style="color:var(--cyan)">capacitive coupling</strong> — no contact needed
+    </li>
+    <li>
+      <span class="kp-icon">💡</span>
+      <strong style="color:var(--green)">LED glows RED</strong> = live wire (Danger!) &nbsp;|&nbsp; No glow = safe wire
+    </li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 3 — ELECTRIC FIELD
+════════════════════════════════════════════════ -->
+<div class="scene" id="scene3">
+  <div class="slide-heading">🔵 Electric Field Detection</div>
+
+  <!-- Field ripple animation -->
+  <div class="field-wrap">
+    <div class="f-ring"></div>
+    <div class="f-ring"></div>
+    <div class="f-ring"></div>
+    <div class="f-ring"></div>
+    <div class="f-ring"></div>
+    <div class="f-center" title="Live AC Wire"></div>
+  </div>
+
+  <ul class="key-points">
+    <li>
+      <span class="kp-icon">🌐</span>
+      AC current produces a <strong style="color:var(--gold)">pulsating EMF field</strong> radiating from the live wire
+    </li>
+    <li>
+      <span class="kp-icon">🧲</span>
+      Probe antenna connects to <strong style="color:var(--cyan)">Pin 14 (clock input)</strong> of IC CD4017
+    </li>
+    <li>
+      <span class="kp-icon">⚡</span>
+      Detected EMF triggers the IC → <strong style="color:var(--green)">LED flashes</strong> = live voltage confirmed
+    </li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 4 — CIRCUIT BLOCK DIAGRAM
+════════════════════════════════════════════════ -->
+<div class="scene" id="scene4">
+  <div class="slide-heading">💡 Circuit Block Diagram</div>
+  <div class="v-tag">⚡ VOLTAGE DETECTED — LED GLOWS ⚡</div>
+
+  <!-- Block flow -->
+  <div class="blocks-row">
+    <div class="blk"><span class="bi">🔌</span>Trans&shy;former</div>
+    <div class="blk-arr">→</div>
+    <div class="blk"><span class="bi">⚡</span>Rectifier</div>
+    <div class="blk-arr">→</div>
+    <div class="blk"><span class="bi">🔋</span>1000μF<br>Cap.</div>
+    <div class="blk-arr">→</div>
+    <div class="blk"><span class="bi">🔧</span>LM7805<br>Reg.</div>
+    <div class="blk-arr">→</div>
+    <div class="blk"><span class="bi">💾</span>CD4017<br>IC</div>
+    <div class="blk-arr">→</div>
+    <div class="blk led-blk"><span class="bi">💡</span>Output<br>LED</div>
+  </div>
+
+  <ul class="key-points">
+    <li>
+      <span class="kp-icon">🔧</span>
+      <strong style="color:var(--gold)">LM7805</strong> regulator supplies a stable <strong style="color:var(--cyan)">5V DC</strong> to the IC
+    </li>
+    <li>
+      <span class="kp-icon">💾</span>
+      <strong style="color:var(--gold)">IC CD4017</strong> counter detects pulsating EMF from the antenna wire
+    </li>
+    <li>
+      <span class="kp-icon">💡</span>
+      Output <strong style="color:var(--green)">LED activates</strong> when AC phase supply is sensed nearby
+    </li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 5 — CONCLUSION
+════════════════════════════════════════════════ -->
+<div class="scene" id="scene5">
+  <div class="badge" style="margin-bottom:10px;">INSPIRE MANAK Awards 2024 – 25</div>
+  <div class="slide-heading" style="margin-bottom:6px;">Non-Contact Voltage Tester</div>
+
+  <div class="tagline-row">
+    <div class="tag-item">
+      <div class="tag-icon">🛡️</div>
+      <div class="tag-word">Safe</div>
+    </div>
+    <div class="tag-item">
+      <div class="tag-icon">⚡</div>
+      <div class="tag-word">Fast</div>
+    </div>
+    <div class="tag-item">
+      <div class="tag-icon">✅</div>
+      <div class="tag-word">Easy</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div style="font-family:'Orbitron',sans-serif;font-size:clamp(0.7rem,1.7vw,1rem);color:var(--cyan);letter-spacing:3px;margin-bottom:14px;">
+    Detect Voltage &nbsp;•&nbsp; No Contact &nbsp;•&nbsp; 50 – 1000 V AC
+  </div>
+
+  <ul class="key-points" style="max-width:530px;">
+    <li>
+      <span class="kp-icon">✔️</span>
+      Always perform a <strong style="color:var(--gold)">live-dead-live test</strong> before use to verify tester accuracy
+    </li>
+    <li>
+      <span class="kp-icon">🔋</span>
+      Keep <strong style="color:var(--cyan)">fresh batteries</strong> installed for reliable and accurate readings
+    </li>
+  </ul>
+
+  <div class="final-note">
+    INSPIRE MANAK Awards 2024–25 &nbsp;|&nbsp; Student Innovation &nbsp;|&nbsp; Akshara Sri EM Model High School
+  </div>
+</div>
+
+
+<!-- Navigation dots -->
+<div id="nav">
+  <div class="dot active" onclick="goTo(0)"></div>
+  <div class="dot" onclick="goTo(1)"></div>
+  <div class="dot" onclick="goTo(2)"></div>
+  <div class="dot" onclick="goTo(3)"></div>
+  <div class="dot" onclick="goTo(4)"></div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
